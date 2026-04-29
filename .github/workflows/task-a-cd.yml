@@ -15,6 +15,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r ./task_a/requirements.txt
-      - name: Run tests
+      - name: Tests
         run: |
           pytest task_a.py
