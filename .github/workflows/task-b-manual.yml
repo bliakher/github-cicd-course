@@ -48,4 +48,15 @@ jobs:
           context: "{{defaultContext}}:task_b"
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
-      # TODO: Add test job
+  # TODO: Add test job
+  test:
+    runs-on: "ubuntu-latest"
+    name: Test container
+    services:
+      test-service:
+        image: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
+        ports:
+          - 8080:80
+    steps:
+      - name: test curl
+        run: curl 127.0.0.1:8080/index.html
