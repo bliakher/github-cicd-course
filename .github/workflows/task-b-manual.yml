@@ -47,7 +47,7 @@ jobs:
       - name: Build and push image
         uses: docker/build-push-action@v7
         with:
-          context: "{{defaultContext}}:task_b"
+          context: task_b
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
   # TODO: Add test job
