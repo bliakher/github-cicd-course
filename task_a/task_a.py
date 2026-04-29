@@ -17,7 +17,7 @@ def test_square_area() -> None:
 
 def test_fib() -> None:
     assert fib(0) == 0
-    assert fib(1) == 0
+    assert fib(1) == 1
     assert fib(2) == 1
     assert fib(3) == 2
     assert fib(5) == 5
