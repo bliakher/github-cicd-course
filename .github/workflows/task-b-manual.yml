@@ -25,6 +25,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Replace message in index.hml
         run: sed -i "s#DEFAULT_MESSAGE#${{ inputs.message }}#" ./task_b/index.html
+      - name: Check replace
+        run: cat task_b/index.html
       - name: Correct directory
         run: cd task_b
       - name: Set up Docker Buildx
