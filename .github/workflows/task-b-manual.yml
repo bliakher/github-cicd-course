@@ -50,6 +50,7 @@ jobs:
           tags: ghcr.io/${{ github.repository }}:${{ inputs.tag }}
   # TODO: Add test job
   test:
+    needs: docker
     runs-on: "ubuntu-latest"
     name: Test container
     services:
